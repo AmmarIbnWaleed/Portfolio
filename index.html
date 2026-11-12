@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Virtual Assistant & Automation Specialist</title>
+  <title>Ammar Waleed | Portfolio & Automation Specialist</title>
   
-  <!-- Google Fonts: Inter for English & Cairo for Arabic -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -141,7 +141,7 @@
 
     /* Hero Section */
     .hero {
-      padding: 100px 0 80px;
+      padding: 80px 0 60px;
       text-align: center;
     }
 
@@ -187,6 +187,9 @@
       text-decoration: none;
       font-weight: 600;
       transition: background-color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .btn-primary:hover {
@@ -208,7 +211,8 @@
       border-color: var(--accent-color);
       background-color: var(--surface-hover);
     }
-/* About Section with Photo */
+
+    /* About Section with Photo */
     .about-section {
       padding: 72px 0;
       border-top: 1px solid var(--border-color);
@@ -275,6 +279,7 @@
       font-size: 0.85rem;
       color: var(--text-secondary);
     }
+
     /* Sections General */
     section {
       padding: 72px 0;
@@ -392,8 +397,16 @@
       .nav-links {
         display: none;
       }
-      .hero {
-        padding: 72px 0 56px;
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .profile-card {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+      .highlights {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -406,6 +419,7 @@
       <a href="#" class="logo">Ammar<span>.</span></a>
       
       <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
         <li><a href="#services" data-i18n="nav_services">Services</a></li>
         <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
@@ -418,8 +432,8 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <main>
+    <!-- Hero -->
     <section class="hero" style="border-top: none;">
       <div class="container">
         <span class="badge" data-i18n="hero_badge">Available for Remote & Freelance Projects</span>
@@ -433,7 +447,8 @@
         </div>
       </div>
     </section>
-<!-- About Me & Resume Section -->
+
+    <!-- About Me & Resume Section -->
     <section id="about" class="about-section">
       <div class="container">
         <div class="about-grid">
@@ -467,6 +482,7 @@
         </div>
       </div>
     </section>
+
     <!-- Services / Expertise -->
     <section id="services">
       <div class="container">
@@ -561,7 +577,7 @@
   </footer>
 
   <!-- Translation & Theme Logic -->
-<script>
+  <script>
     const translations = {
       en: {
         nav_about: "About",
