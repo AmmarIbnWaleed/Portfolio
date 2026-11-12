@@ -208,7 +208,73 @@
       border-color: var(--accent-color);
       background-color: var(--surface-hover);
     }
+/* About Section with Photo */
+    .about-section {
+      padding: 72px 0;
+      border-top: 1px solid var(--border-color);
+    }
 
+    .about-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .profile-card {
+      position: relative;
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .about-content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .about-content p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .highlight-item {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    .highlight-item h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .highlight-item span {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
     /* Sections General */
     section {
       padding: 72px 0;
@@ -367,7 +433,40 @@
         </div>
       </div>
     </section>
+<!-- About Me & Resume Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Profile Photo Card -->
+          <div class="profile-card">
+            <img src="profile.jpg" alt="Ammar Waleed" class="profile-img" />
+          </div>
 
+          <!-- Bio & Resume Info -->
+          <div class="about-content">
+            <h2 data-i18n="about_title">Hello, I'm Ammar Waleed</h2>
+            <p data-i18n="about_desc">
+              A dedicated developer and automation specialist with hands-on technical experience. I combine engineering-first problem-solving with clean architecture to build robust workflows, custom web applications, and scalable productivity systems.
+            </p>
+            
+            <div class="highlights">
+              <div class="highlight-item">
+                <h4 data-i18n="high_1_title">💡 Engineering Mindset</h4>
+                <span data-i18n="high_1_desc">First-principles approach & modular design.</span>
+              </div>
+              <div class="highlight-item">
+                <h4 data-i18n="high_2_title">⚡ Automation Focus</h4>
+                <span data-i18n="high_2_desc">Eliminating repetitive tasks via APIs & n8n/Make.</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 32px;">
+              <a href="#" class="btn-primary" data-i18n="resume_btn">📄 Download Resume / CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Services / Expertise -->
     <section id="services">
       <div class="container">
@@ -462,9 +561,10 @@
   </footer>
 
   <!-- Translation & Theme Logic -->
-  <script>
+<script>
     const translations = {
       en: {
+        nav_about: "About",
         nav_services: "Services",
         nav_projects: "Projects",
         nav_contact: "Contact",
@@ -473,6 +573,13 @@
         hero_desc: "I help businesses streamline daily operations through workflow automation, structured Notion workspaces, and clean full-stack web development.",
         hero_cta_primary: "View My Work",
         hero_cta_secondary: "Get in Touch",
+        about_title: "Hello, I'm Ammar Waleed",
+        about_desc: "A dedicated developer and automation specialist with hands-on technical experience. I combine engineering-first problem-solving with clean architecture to build robust workflows, custom web applications, and scalable productivity systems.",
+        high_1_title: "💡 Engineering Mindset",
+        high_1_desc: "First-principles approach & modular design.",
+        high_2_title: "⚡ Automation Focus",
+        high_2_desc: "Eliminating repetitive tasks via APIs & n8n/Make.",
+        resume_btn: "📄 Download Resume / CV",
         services_title: "Core Expertise",
         services_subtitle: "Practical systems designed to save time, reduce manual errors, and scale your operations.",
         srv_1_title: "Workflow Automation",
@@ -497,6 +604,7 @@
         toggle_btn: "🌐 العربية"
       },
       ar: {
+        nav_about: "عني",
         nav_services: "الخدمات",
         nav_projects: "المشاريع",
         nav_contact: "تواصل معي",
@@ -505,6 +613,13 @@
         hero_desc: "أساعد الشركات ورواد الأعمال على تنظيم العمليات اليومية وتوفير الوقت من خلال أتمتة المهام، وبناء أنظمة Notion المتكاملة، وتطوير تطبيقات الويب.",
         hero_cta_primary: "استعرض أعمالي",
         hero_cta_secondary: "تواصل معي",
+        about_title: "أهلاً بك، أنا عمار وليد",
+        about_desc: "مطور برمجيات وأخصائي أتمتة بخبرة عملية. أدمج التفكير الهندسي من الصفر مع هيكلة الكود النظيف لبناء مسارات عمل قوية، تطبيقات ويب مخصصة، وأنظمة إنتاجية قابلة للتوسع.",
+        high_1_title: "💡 عقلية هندسية",
+        high_1_desc: "الاعتماد على المبادئ الأساسية والتصميم المعياري.",
+        high_2_title: "⚡ تركيز على الأتمتة",
+        high_2_desc: "القضاء على المهام اليدوية عبر الـ APIs و n8n/Make.",
+        resume_btn: "📄 تحميل السيرة الذاتية (CV)",
         services_title: "مجالات الخبرة",
         services_subtitle: "أنظمة عملية مصممة لتوفير الوقت، تقليل الأخطاء اليدوية، وتسهيل توسع أعمالك.",
         srv_1_title: "أتمتة مسارات العمل (Automation)",
